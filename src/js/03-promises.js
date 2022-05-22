@@ -15,7 +15,7 @@ function onSubmitForm(evt) {
 for (let i = 0; i < amount; i+= 1) {
   const position = i + 1;
 
-  const timeCreatePromise = createPromise(position, delay)
+  createPromise(position, delay)
     .then(({ position, delay }) => {
       setTimeout(() => {
         Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
