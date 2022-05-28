@@ -42,11 +42,15 @@ function onClickStart(evt) {
   timerId = setInterval(() => {
     const dateCurrent = Date.now();
     const differenceDate = startDate - dateCurrent;
-    
+    refs.btnStart.disabled = true;
+    refs.input.disabled = true;
+
     if (differenceDate < 0) {
       clearInterval(timerId);
       Notiflix.Notify.success('Your time is up');
       refs.btnStart.disabled = false;
+      refs.input.disabled = false;
+
 
       return;
     }
